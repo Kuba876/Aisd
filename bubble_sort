@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+    static bool zmiana = true;
+    public static void Main(string[] args)
+    {
+        Random rng = new Random();
+        List<int> l = new List<int>();
+        for(int i =0;i<5;i++){
+            l.Add(rng.Next(1,20));
+        }
+        Console.WriteLine(string.Join(", ", l));
+        int temp;
+        
+        while(zmiana == true){
+            zmiana = false;
+            Console.WriteLine("a");
+            for(int i =1;i<l.Count;i++){
+                if(l[i-1]>l[i]){
+                    temp = l[i];
+                    l[i]=l[i-1];
+                    l[i-1]=temp;
+                    zmiana=true;
+                    
+                }
+                
+            };
+        };
+        
+        
+        Console.WriteLine(string.Join(", ", l));
+    }
+}
