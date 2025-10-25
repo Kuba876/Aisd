@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace WinFormsApp1
+{
+    internal class Dzrzewo
+    {
+        Wezel korzen;
+        int liczba_elementow;
+        public Drzewo(int liczba)
+        {
+            this.korzen = new Wezel(liczba);
+            this.liczba_elementow = 0;
+        }
+        Wezel dodaj(int liczba)
+        {
+            this.liczba_elementow++;
+            if(this.korzen == null)
+            {
+                return this.korzen = new Wezel(liczba);
+            }
+            Wezel rodzic = this.znajdz_rodzica();
+            return rodzic.Dodaj_dziecko(liczba);
+ 
+        }
+ 
+        List<int> deczbinx(int liczba)
+        {
+            var lista = new List<int>();
+            while (liczba > 1)
+            {
+                lista.Add(liczba % 2);
+                liczba /= 2;
+            }
+            return lista;
+        }
+ 
+ 
+        Wezel znajdz_rodzica(int ktory)
+        {
+		//int i =mapa.Count-1;i>1;i--
+		Wezel w = this.korzen;
+		List<int> mapa = deczbinx(ktory)
+            for(int i = 2;i<mapa.Count;i++){
+		if(mapa[i]=0){
+			w = w.lewy;
+		}else{
+			w = w.prawy;
+		}
+		
+	    }
+	    return w;
+        }
+        Wezel napraw_kopiec(Wezel l)
+        {
+ 
+        }
+ 
+    }
+}
